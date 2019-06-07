@@ -45,20 +45,20 @@ hr {
   margin: 16px;
   padding: none;
 }
-.current-location {
+#current-location {
   font-size: 16pt;
   font-weight: lighter;
 }
-.current-location .current-system {
+#current-location #current-system {
   font-weight: bold;
 }
-.current-location .current-station-span {
+#current-location .current-station-span {
   display: block;
   margin-top: 4px;
   font-size: 11pt;
   text-transform: lowercase;
   font-variant: small-caps;
 }
-.current-location .current-station-span .current-station {
+#current-location .current-station-span #current-station {
   font-weight: bold;
 }
