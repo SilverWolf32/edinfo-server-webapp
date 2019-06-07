@@ -7,6 +7,8 @@ body {
 	padding: 16px;
 	
 	font-family: sans-serif;
+	// text-transform: lowercase;
+	// font-variant: small-caps;
 }
 /* @media (prefers-color-scheme: dark) {
 	body {
@@ -52,4 +54,24 @@ hr {
 	border-width: 0.5px;
 	margin: 16px;
 	padding: none;
+}
+
+////////////////
+
+.current-location {
+	font-size: 16pt;
+	font-weight: lighter;
+	.current-system {
+		font-weight: bold;
+	}
+	.current-station-span {
+		display: block;
+		margin-top: 4px;
+		font-size: 11pt;
+		text-transform: lowercase;
+		font-variant: small-caps;
+		.current-station {
+			font-weight: bold;
+		}
+	}
 }
