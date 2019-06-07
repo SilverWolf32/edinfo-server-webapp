@@ -1,3 +1,5 @@
+@maincolor: #FFA040;
+
 * {
 	box-sizing: border-box;
 }
@@ -10,15 +12,15 @@ body {
 	// text-transform: lowercase;
 	// font-variant: small-caps;
 }
-/* @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #202020;
-		color: #E0E0E0;
-	}
-	hr {
-		border-color: #808080;
-	}
-} */
+// @media (prefers-color-scheme: dark) {
+body {
+	background-color: black;
+	color: @maincolor;
+}
+hr {
+	border-color: @maincolor;
+}
+// }
 
 .light {
 	font-weight: lighter;
@@ -35,10 +37,10 @@ body {
 }
 .link-activebg {
 	&:active {
-		background-color: fade(black, 10%);
-		@media (prefers-color-scheme: dark) {
-			background-color: fade(white, 20%);
-		}
+		// background-color: fade(black, 10%);
+		// @media (prefers-color-scheme: dark) {
+		background-color: fade(white, 20%);
+		// }
 		border-radius: 4px;
 		// make some space around it
 		padding: 4px;

@@ -5,15 +5,13 @@ body {
   padding: 16px;
   font-family: sans-serif;
 }
-/* @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #202020;
-		color: #E0E0E0;
-	}
-	hr {
-		border-color: #808080;
-	}
-} */
+body {
+  background-color: black;
+  color: #FFA040;
+}
+hr {
+  border-color: #FFA040;
+}
 .light {
   font-weight: lighter;
 }
@@ -27,15 +25,10 @@ body {
   opacity: 0.7;
 }
 .link-activebg:active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   padding: 4px;
   margin: -4px;
-}
-@media (prefers-color-scheme: dark) {
-  .link-activebg:active {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
 }
 h1 {
   margin-bottom: 4px;
