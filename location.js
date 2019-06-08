@@ -2,6 +2,12 @@ let locationDisplayP = document.getElementById("current-location")
 
 locationDisplayP.style.visibility = "hidden"
 
+{
+	let undockedSpan = document.getElementById("undocked-span")
+	undockedSpan.textContent = "Undocked" // undo the no-JS warning in the HTML
+}
+
+
 var socketio = io("http://localhost:3000")
 socketio.on("connect", function() {
 	console.log("Socket connected.")
