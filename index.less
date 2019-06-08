@@ -71,6 +71,8 @@ hr {
 }
 
 button {
+	height: 32px;
+	
 	// use our own focus indicator instead
 	outline: none;
 	&::-moz-focus-inner {
@@ -79,17 +81,27 @@ button {
 	
 	border: none;
 	
-	padding: 8px;
-	font-size: 10pt;
+	// padding: 8px;
+	font-size: 11pt;
+	// font-weight: bold;
+	
+	text-transform: lowercase;
+	font-variant: small-caps;
+	
 	// reversed color
 	background-color: @maincolor;
 	color: black;
 	box-shadow: @boxglow @maincolor;
 	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	
 	// transition: @transitionspeed;
 	&:focus {
 		border: 2px solid @secondarycolor;
-		padding: 6px; // counteract the border getting bigger
+		padding: -2px; // counteract the border getting bigger
 		box-shadow: @boxglow @secondarycolor;
 	}
 	&:hover {
@@ -144,7 +156,7 @@ button {
 	align-items: stretch;
 	// padding: 4px 8px 4px 8px;
 	
-	font-size: 10pt;
+	font-size: 12pt;
 	font-weight: bold;
 	
 	text-transform: lowercase;

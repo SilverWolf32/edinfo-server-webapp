@@ -41,20 +41,26 @@ hr {
   padding: none;
 }
 button {
+  height: 32px;
   outline: none;
   border: none;
-  padding: 8px;
-  font-size: 10pt;
+  font-size: 11pt;
+  text-transform: lowercase;
+  font-variant: small-caps;
   background-color: #FF8020;
   color: black;
   box-shadow: 0 0 16px #FF8020;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 button::-moz-focus-inner {
   border: none;
 }
 button:focus {
   border: 2px solid #30A0FF;
-  padding: 6px;
+  padding: -2px;
   box-shadow: 0 0 16px #30A0FF;
 }
 button:active {
@@ -94,7 +100,7 @@ button:active {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  font-size: 10pt;
+  font-size: 12pt;
   font-weight: bold;
   text-transform: lowercase;
   font-variant: small-caps;
