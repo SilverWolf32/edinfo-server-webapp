@@ -20,6 +20,10 @@ async function updateExtendedInfo() {
 	
 	fetch("/api/nearby-stations?r=30")
 	.then(function(response) {
+		if (response.status != 200) {
+			// it's an error
+			return Promise.reject(response)
+		}
 		return response.json()
 	})
 	.then(function(stations) {
@@ -59,8 +63,37 @@ async function updateExtendedInfo() {
 		}
 		table.appendChild(tbody)
 	})
-	.catch(function(error) {
-		console.log(error)
+	.catch(function(response) {
+		console.log(response)
+		
+		response.json().then(function(error) {
+			while (table.hasChildNodes()) {
+				table.removeChild(table.firstChild)
+			}
+			{
+				let thead = document.createElement("thead")
+				let tr = document.createElement("tr")
+				let td = document.createElement("td")
+				let div = document.createElement("div")
+				div.textContent = response.statusText
+				td.appendChild(div)
+				tr.appendChild(td)
+				thead.appendChild(tr)
+				table.appendChild(thead)
+			}
+			{
+				let tbody = document.createElement("tbody")
+				let tr = document.createElement("tr")
+				let td = document.createElement("td")
+				td.textContent = error.message
+				// td.textContent = JSON.stringify(error, null, "\t")
+				td.style.fontFamily = "monospace"
+				tr.appendChild(td)
+				tbody.appendChild(tr)
+				table.appendChild(tbody)
+			}
+			debugger
+		})
 	})
 }
 
