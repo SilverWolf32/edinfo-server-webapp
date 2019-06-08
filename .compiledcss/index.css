@@ -4,15 +4,15 @@
 body {
   padding: 16px;
   font-family: sans-serif;
-  text-shadow: 0 0 16px #FFA040;
+  text-shadow: 0 0 16px #FF8020;
 }
 body {
   background-color: black;
-  color: #FFA040;
+  color: #FF8020;
 }
 hr {
-  border-color: #FFA040;
-  box-shadow: 0 0 16px #FFA040;
+  border-color: #FF8020;
+  box-shadow: 0 0 16px #FF8020;
 }
 .light {
   font-weight: lighter;
@@ -54,8 +54,8 @@ hr {
   font-weight: normal;
   text-transform: lowercase;
   font-variant: small-caps;
-  color: #A0D0FF;
-  text-shadow: 0 0 16px #A0D0FF;
+  color: #30A0FF;
+  text-shadow: 0 0 16px #30A0FF;
 }
 #current-location .current-station-span #current-station {
   font-weight: bold;
