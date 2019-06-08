@@ -15,7 +15,17 @@
 			<span id="undocked-span" class="current-station-span">JavaScript is disabled</span>
 		</p>
 		
-		<button id="extendedinfo-fetch-button" onclick="updateExtendedInfo()">Find Nearby Stations</button>
+		<div class="controls-container">
+			<button id="extendedinfo-fetch-button" onclick="updateExtendedInfo()">Find Nearby Stations</button>
+			<div class="segmentedcontrol">
+				<input name="filter-selector" id="filter-selector-fuel" checked type="radio" class="segmentedcontrol" id="extendedinfo-filter-control" />
+				<label for="filter-selector-fuel"><span>Fuel</span></label>
+				<input name="filter-selector" id="filter-selector-if" type="radio" class="segmentedcontrol" id="extendedinfo-filter-control" />
+				<label for="filter-selector-if"><span>Interstellar Factors</span></label>
+				<input name="filter-selector" id="filter-selector-mtraders" type="radio" class="segmentedcontrol" id="extendedinfo-filter-control" />
+				<label for="filter-selector-mtraders"><span>Material Traders</span></label>
+			</div>
+		</div>
 		
 		<table id="extendedinfo-table">
 		</table>

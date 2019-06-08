@@ -1,6 +1,11 @@
 @maincolor: #FF8020;
 @secondarycolor: #30A0FF;
+
 @textglow: 0 0 16px;
+// @boxglow: 0 0 16px 1px;
+@boxglow: 0 0 16px;
+@boxglowsmall: 0 0 8px;
+@hrglow: 0 0 16px 2px;
 
 @transitionspeed: 0.25s;
 
@@ -25,7 +30,7 @@ body {
 }
 hr {
 	border-color: @maincolor;
-	box-shadow: @textglow @maincolor;
+	box-shadow: @hrglow @maincolor;
 }
 // }
 
@@ -79,20 +84,20 @@ button {
 	// reversed color
 	background-color: @maincolor;
 	color: black;
-	box-shadow: @textglow @maincolor;
+	box-shadow: @boxglow @maincolor;
 	
 	// transition: @transitionspeed;
 	&:focus {
 		border: 2px solid @secondarycolor;
 		padding: 6px; // counteract the border getting bigger
-		box-shadow: @textglow @secondarycolor;
+		box-shadow: @boxglow @secondarycolor;
 	}
 	&:hover {
 		
 	}
 	&:active {
 		background-color: @secondarycolor;
-		box-shadow: @textglow @secondarycolor;
+		box-shadow: @boxglow @secondarycolor;
 		// transition: @transitionspeed;
 	}
 }
@@ -120,10 +125,58 @@ button {
 	}
 }
 
-#extendedinfo-fetch-button {
-	display: block;
+.controls-container {
 	margin-bottom: 16px;
+	
+	// border: 1px solid @maincolor;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 }
+.segmentedcontrol {
+	align-self: stretch;
+	margin-left: 16px;
+	
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	// padding: 4px 8px 4px 8px;
+	
+	font-size: 10pt;
+	font-weight: bold;
+	
+	text-transform: lowercase;
+	font-variant: small-caps;
+	
+	// background-color: @secondarycolor;
+	border: 1px solid @maincolor;
+	border-radius: 8px;
+	box-shadow: @boxglow @maincolor;
+	overflow: hidden; // prevent children sticking out at the corners
+	
+	label {
+		// padding: 7px 7px 0 7px;
+		padding: 0 8px 0 8px;
+		border-right: 1px solid @maincolor;
+		&:last-child {
+			border-right: none;
+		}
+		
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	input {
+		display: none;
+		&:checked + label {
+			background-color: @maincolor;
+			color: black;
+		}
+	}
+}
+
 #extendedinfo-table {
 	width: 100%;
 	border-collapse: collapse;
@@ -150,7 +203,8 @@ button {
 		}
 	}
 	td {
-		box-shadow: 0 0 8px @maincolor;
+		// box-shadow: @boxglowsmall @maincolor, @boxglowsmall @maincolor inset;
+		box-shadow: @boxglowsmall @maincolor;
 		padding: 4px;
 		// border: 2px solid fade(black, 100%);
 		border: 1px solid @maincolor;

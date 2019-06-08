@@ -12,7 +12,7 @@ body {
 }
 hr {
   border-color: #FF8020;
-  box-shadow: 0 0 16px #FF8020;
+  box-shadow: 0 0 16px 2px #FF8020;
 }
 .light {
   font-weight: lighter;
@@ -81,9 +81,44 @@ button:active {
 #current-location .current-station-span #current-station {
   font-weight: bold;
 }
-#extendedinfo-fetch-button {
-  display: block;
+.controls-container {
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.segmentedcontrol {
+  align-self: stretch;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  font-size: 10pt;
+  font-weight: bold;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  border: 1px solid #FF8020;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #FF8020;
+  overflow: hidden;
+}
+.segmentedcontrol label {
+  padding: 0 8px 0 8px;
+  border-right: 1px solid #FF8020;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.segmentedcontrol label:last-child {
+  border-right: none;
+}
+.segmentedcontrol input {
+  display: none;
+}
+.segmentedcontrol input:checked + label {
+  background-color: #FF8020;
+  color: black;
 }
 #extendedinfo-table {
   width: 100%;
