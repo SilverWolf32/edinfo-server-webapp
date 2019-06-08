@@ -60,3 +60,26 @@ hr {
 #current-location .current-station-span #current-station {
   font-weight: bold;
 }
+#extendedinfo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#extendedinfo-table thead td {
+  padding: 0;
+}
+#extendedinfo-table thead td div {
+  box-shadow: 0 0 8px #FF8020;
+  background-color: #FF8020;
+  color: black;
+  margin: 1px;
+  padding: 4px;
+}
+#extendedinfo-table thead td:first-child div {
+  margin-left: none;
+}
+#extendedinfo-table td {
+  box-shadow: 0 0 8px #FF8020;
+  padding: 4px;
+  border: 1px solid #FF8020;
+  margin: 2px;
+}

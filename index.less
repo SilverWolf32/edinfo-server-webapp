@@ -85,3 +85,38 @@ hr {
 		}
 	}
 }
+
+#extendedinfo-table {
+	width: 100%;
+	border-collapse: collapse;
+	// border-style: hidden;
+	// border-spacing: 4px 0; // space cells apart
+	// border-collapse: separate; // required for border-spacing
+	thead {
+		td {
+			padding: 0;
+			// border: none;
+			// box-shadow: none; // leave that to the divs
+			div {
+				box-shadow: 0 0 8px @maincolor;
+				// reverse color
+				background-color: @maincolor;
+				color: black;
+				// border: 1px solid black;
+				margin: 1px;
+				padding: 4px;
+			}
+			&:first-child div {
+				margin-left: none;
+			}
+		}
+	}
+	td {
+		box-shadow: 0 0 8px @maincolor;
+		padding: 4px;
+		// border: 2px solid fade(black, 100%);
+		border: 1px solid @maincolor;
+		margin: 2px;
+		// box-sizing: content-box;
+	}
+}
