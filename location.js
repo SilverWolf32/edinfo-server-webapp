@@ -5,6 +5,7 @@ locationDisplayP.style.visibility = "hidden"
 var socketio = io("http://localhost:3000")
 socketio.on("connect", function() {
 	console.log("Socket connected.")
+	useHUDColor()
 })
 socketio.on("disconnect", function() {
 	console.log("Disconnected.")

@@ -49,8 +49,10 @@ hr {
   display: block;
   margin-top: 4px;
   font-size: 11pt;
+  font-weight: normal;
   text-transform: lowercase;
   font-variant: small-caps;
+  color: #A0D0FF;
 }
 #current-location .current-station-span #current-station {
   font-weight: bold;
