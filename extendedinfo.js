@@ -70,6 +70,8 @@ function populateTable() {
 	let stations = nearbyStations
 	console.log("Stations:", stations)
 	
+	let table = extendedInfoTable
+	
 	// remove all columns
 	while (table.hasChildNodes()) {
 		table.removeChild(table.firstChild)
