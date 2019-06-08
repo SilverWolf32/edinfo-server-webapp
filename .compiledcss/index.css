@@ -4,6 +4,7 @@
 body {
   padding: 16px;
   font-family: sans-serif;
+  text-shadow: 0 0 16px #FFA040;
 }
 body {
   background-color: black;
@@ -11,6 +12,7 @@ body {
 }
 hr {
   border-color: #FFA040;
+  box-shadow: 0 0 16px #FFA040;
 }
 .light {
   font-weight: lighter;
@@ -53,6 +55,7 @@ hr {
   text-transform: lowercase;
   font-variant: small-caps;
   color: #A0D0FF;
+  text-shadow: 0 0 16px #A0D0FF;
 }
 #current-location .current-station-span #current-station {
   font-weight: bold;
