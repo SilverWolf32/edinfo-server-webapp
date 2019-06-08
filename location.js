@@ -18,7 +18,7 @@ socketio.on("new-data", function(payload) {
 
 async function fetchLocationInfo() {
 	// Fetch API, see https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-	fetch("http://localhost:3000/api").then(function(response) {
+	fetch("/api").then(function(response) {
 		return response.json()
 	}).then(function(data) {
 		updateLocationDisplay(data)
