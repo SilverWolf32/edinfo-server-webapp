@@ -83,10 +83,11 @@ function populateTable() {
 	// add headers
 	for (let i = 0; i < properties.length; i++) {
 		let property = properties[i]
+		let displayName = unCamelCase(property)
 		let cell = document.createElement("td")
 		// div to contain the text, that way we can set a margin on it
 		let div = document.createElement("div")
-		div.textContent = property
+		div.textContent = displayName
 		cell.appendChild(div)
 		thead.appendChild(cell)
 	}
@@ -108,3 +109,9 @@ function populateTable() {
 }
 
 // updateExtendedInfo()
+
+function unCamelCase(s) {
+	return (s.toUpperCase()[0] + s.slice(1).replace(/([A-Z])/g, " $1"))
+		// Got any more things that shouldn't be capitalized? Put them here!
+		.replace(/ (To|The|And|A|An|Of|On) /, (word) => word.toLowerCase())
+}
