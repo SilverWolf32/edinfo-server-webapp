@@ -3,14 +3,27 @@ let extendedInfoTable = document.getElementById("extendedinfo-table")
 async function updateExtendedInfo() {
 	// ask server to get nearby stations
 	console.log("Getting nearby station information")
+	
+	let table = extendedInfoTable
+	
+	// tell the user what's happening
+	{
+		while (table.hasChildNodes()) {
+			table.removeChild(table.firstChild)
+		}
+		let tr = document.createElement("tr")
+		let td = document.createElement("td")
+		td.textContent = "Fetching..."
+		tr.appendChild(td)
+		table.appendChild(tr)
+	}
+	
 	fetch("/api/nearby-stations?r=30")
 	.then(function(response) {
 		return response.json()
 	})
 	.then(function(stations) {
 		console.log("Stations:", stations)
-		
-		let table = extendedInfoTable
 		
 		// remove all columns
 		while (table.hasChildNodes()) {
