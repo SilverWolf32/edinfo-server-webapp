@@ -2,6 +2,8 @@
 @secondarycolor: #30A0FF;
 @textglow: 0 0 16px;
 
+@transitionspeed: 0.25s;
+
 * {
 	box-sizing: border-box;
 }
@@ -63,6 +65,38 @@ hr {
 	padding: none;
 }
 
+button {
+	// use our own focus indicator instead
+	outline: none;
+	&::-moz-focus-inner {
+		border: none;
+	}
+	
+	border: none;
+	
+	padding: 8px;
+	font-size: 10pt;
+	// reversed color
+	background-color: @maincolor;
+	color: black;
+	box-shadow: @textglow @maincolor;
+	
+	// transition: @transitionspeed;
+	&:focus {
+		border: 2px solid @secondarycolor;
+		padding: 6px; // counteract the border getting bigger
+		box-shadow: @textglow @secondarycolor;
+	}
+	&:hover {
+		
+	}
+	&:active {
+		background-color: @secondarycolor;
+		box-shadow: @textglow @secondarycolor;
+		// transition: @transitionspeed;
+	}
+}
+
 ////////////////
 
 #current-location {
@@ -86,6 +120,10 @@ hr {
 	}
 }
 
+#extendedinfo-fetch-button {
+	display: block;
+	margin-bottom: 16px;
+}
 #extendedinfo-table {
 	width: 100%;
 	border-collapse: collapse;

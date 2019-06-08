@@ -1,4 +1,5 @@
 let extendedInfoTable = document.getElementById("extendedinfo-table")
+let fetchButton = document.getElementById("extendedinfo-fetch-button")
 
 async function updateExtendedInfo() {
 	// ask server to get nearby stations
@@ -97,4 +98,4 @@ async function updateExtendedInfo() {
 	})
 }
 
-updateExtendedInfo()
+// updateExtendedInfo()
