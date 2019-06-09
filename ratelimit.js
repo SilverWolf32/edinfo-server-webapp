@@ -39,15 +39,18 @@ socketio.on("rate-limit-info", function(info) {
 	rateLimitEstimatedPool = rateLimitPool
 	rateLimitEstimatedTimeToFull = rateLimitTimeToFull
 	
-	let indicator = document.getElementById("rateLimitIndicator")
+	let indicator = document.getElementById("rateLimitIndicatorValue")
 	indicator.textContent = `${rateLimitPool}/${rateLimitMax} (${rateLimitTimeToFull}s)`
+	
+	let fullIndicator = document.getElementById("rateLimitIndicator")
+	fullIndicator.style = "visibility: visible;"
 })
 function displayRateLimitEstimate() {
 	console.log("Calculating rate limit estimate")
 	if (calcRateLimitEstimate() == false) {
 		return
 	}
-	let indicator = document.getElementById("rateLimitIndicator")
+	let indicator = document.getElementById("rateLimitIndicatorValue")
 	indicator.textContent = `${rateLimitEstimatedPool}/${rateLimitMax} (${rateLimitEstimatedTimeToFull}s)`
 }
 
