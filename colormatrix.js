@@ -17,7 +17,8 @@ async function useHUDColor() {
 		// let container = document.getElementById("svgContainer")
 		// container.innerHTML = svg
 		
-		document.body.innerHTML += svg
+		// see https://stackoverflow.com/a/41022696
+		document.body.insertAdjacentHTML("beforeend", svg)
 		
 		// see https://stackoverflow.com/a/24109000
 		// let parser = new DOMParser()
