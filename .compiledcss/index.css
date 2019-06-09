@@ -149,3 +149,8 @@ button:active {
   border: 1px solid #FF8020;
   margin: 2px;
 }
+.rateLimitIndicator {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}

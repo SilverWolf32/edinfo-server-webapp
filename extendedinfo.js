@@ -21,7 +21,7 @@ async function updateExtendedInfo() {
 		table.appendChild(tr)
 	}
 	
-	fetch("/api/nearby-stations?r=30")
+	fetch("/api/nearby-stations?r=1")
 	.then(function(response) {
 		if (response.status != 200) {
 			// it's an error
@@ -62,7 +62,7 @@ async function updateExtendedInfo() {
 				tbody.appendChild(tr)
 				table.appendChild(tbody)
 			}
-			debugger
+			// debugger
 		})
 	})
 }
