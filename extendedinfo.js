@@ -100,7 +100,24 @@ function populateTable() {
 		for (let j = 0; j < properties.length; j++) {
 			let property = properties[j]
 			let cell = document.createElement("td")
-			cell.textContent = station[property]
+			
+			let text = station[property]
+			if (text == Number(text)) {
+				text = Math.round(text)
+			}
+			cell.textContent = text
+			
+			if (property == "distance") {
+				cell.textContent += " Ly"
+				cell.style.textTransform = "none"
+				cell.style.fontFamily = '"Menlo", "DejaVu Sans Mono", monospace'
+			}
+			if (property == "distanceToArrival") {
+				cell.textContent += " Ls"
+				cell.style.textTransform = "none"
+				cell.style.fontFamily = '"Menlo", "DejaVu Sans Mono", monospace'
+			}
+			
 			row.appendChild(cell)
 		}
 		tbody.appendChild(row)
