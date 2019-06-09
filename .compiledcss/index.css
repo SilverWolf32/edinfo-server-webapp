@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+.monospace {
+  font-family: "Menlo", "DejaVu Sans Mono", monospace;
+}
 body {
   padding: 16px;
   font-family: sans-serif;

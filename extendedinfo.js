@@ -57,7 +57,7 @@ async function updateExtendedInfo() {
 				let td = document.createElement("td")
 				td.textContent = error.message
 				// td.textContent = JSON.stringify(error, null, "\t")
-				td.style.fontFamily = "monospace"
+				td.classList.add("monospace")
 				tr.appendChild(td)
 				tbody.appendChild(tr)
 				table.appendChild(tbody)
@@ -119,19 +119,19 @@ function populateTable() {
 				if (station[property] === "Planetary Outpost") {
 					text = "M"
 				}
-				cell.style.fontFamily = '"Menlo", "DejaVu Sans Mono", monospace'
+				cell.classList.add("monospace")
 			}
 			cell.textContent = text
 			
 			if (property == "distance") {
 				cell.textContent += " Ly"
 				cell.style.textTransform = "none"
-				cell.style.fontFamily = '"Menlo", "DejaVu Sans Mono", monospace'
+				cell.classList.add("monospace")
 			}
 			if (property == "distanceToArrival") {
 				cell.textContent += " Ls"
 				cell.style.textTransform = "none"
-				cell.style.fontFamily = '"Menlo", "DejaVu Sans Mono", monospace'
+				cell.classList.add("monospace")
 			}
 			
 			row.appendChild(cell)
