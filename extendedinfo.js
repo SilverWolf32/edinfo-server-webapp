@@ -68,6 +68,9 @@ async function updateExtendedInfo() {
 }
 function populateTable() {
 	let stations = nearbyStations
+	
+	stations = filterStations(stations)
+	
 	console.log("Stations:", stations)
 	
 	let table = extendedInfoTable
@@ -126,6 +129,44 @@ function populateTable() {
 }
 
 // updateExtendedInfo()
+
+function filterStations(stations) {
+	// see https://stackoverflow.com/a/15839451
+	let selectedType = document.querySelector('input[name="filter-selector"]:checked').value
+	console.log("Filtering stations for " + unCamelCase(selectedType).toLowerCase())
+	stations = stations.filter((station) => {
+		switch (selectedType) {
+			case "fuel":
+				return station.otherServices.includes("Refuel")
+				break
+			case "repair":
+				return station.otherServices.includes("Repair")
+				break
+			case "restock":
+				return station.otherServices.includes("Restock")
+				break
+			case "interstellarFactors":
+				return station.otherServices.includes("Interstellar Factors Contact")
+				break
+			case "materialTrader":
+				return station.otherServices.includes("Material Trader")
+				break
+			case "techBroker":
+				return station.otherServices.includes("Technology Broker")
+				break
+		}
+		return false
+	})
+	console.log(stations.length + " results")
+	return stations
+}
+// make selector filter the stations
+{
+	let radios = document.querySelectorAll('input[name="filter-selector"]')
+	for (let i = 0; i < radios.length; i++) {
+		radios[i].addEventListener("click", populateTable)
+	}
+}
 
 function unCamelCase(s) {
 	return (s.toUpperCase()[0] + s.slice(1).replace(/([A-Z])/g, " $1"))
