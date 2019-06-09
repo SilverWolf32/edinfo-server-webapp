@@ -80,13 +80,18 @@ function populateTable() {
 		table.removeChild(table.firstChild)
 	}
 	// add rows
-	let properties = ["name", "systemName", "distanceToArrival", "distance"]
+	let properties = ["type", "name", "systemName", "distanceToArrival", "distance"]
 	
 	let thead = document.createElement("thead")
 	// add headers
 	for (let i = 0; i < properties.length; i++) {
 		let property = properties[i]
 		let displayName = unCamelCase(property)
+		
+		if (property == "type") {
+			displayName = "Pad"
+		}
+		
 		let cell = document.createElement("td")
 		// div to contain the text, that way we can set a margin on it
 		let div = document.createElement("div")
@@ -107,6 +112,14 @@ function populateTable() {
 			let text = station[property]
 			if (text == Number(text)) {
 				text = Math.round(text)
+			}
+			if (property == "type") {
+				// outposts are currently the only stations with only S/M pads
+				text = "L"
+				if (station[property] === "Planetary Outpost") {
+					text = "M"
+				}
+				cell.style.fontFamily = '"Menlo", "DejaVu Sans Mono", monospace'
 			}
 			cell.textContent = text
 			
