@@ -1,7 +1,7 @@
 let extendedInfoTable = document.getElementById("extendedinfo-table")
 let fetchButton = document.getElementById("extendedinfo-fetch-button")
 
-var nearbyStations = []
+var nearbyStations = null
 
 async function updateExtendedInfo() {
 	// ask server to get nearby stations
@@ -69,6 +69,11 @@ async function updateExtendedInfo() {
 function populateTable() {
 	let stations = nearbyStations
 	
+	if (stations == null) {
+		// no stations to add
+		return
+	}
+	
 	stations = filterStations(stations)
 	
 	console.log("Stations:", stations)
@@ -79,6 +84,7 @@ function populateTable() {
 	while (table.hasChildNodes()) {
 		table.removeChild(table.firstChild)
 	}
+	
 	// add rows
 	let properties = ["type", "name", "systemName", "distanceToArrival", "distance"]
 	
