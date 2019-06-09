@@ -2,6 +2,12 @@ let locationDisplayP = document.getElementById("current-location")
 
 locationDisplayP.style.visibility = "hidden"
 
+{
+	let undockedSpan = document.getElementById("undocked-span")
+	undockedSpan.textContent = "Undocked" // undo the no-JS warning in the HTML
+}
+
+
 var socketio = io("http://localhost:3000")
 socketio.on("connect", function() {
 	console.log("Socket connected.")
@@ -17,7 +23,7 @@ socketio.on("new-data", function(payload) {
 
 async function fetchLocationInfo() {
 	// Fetch API, see https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-	fetch("http://localhost:3000/api").then(function(response) {
+	fetch("/api").then(function(response) {
 		return response.json()
 	}).then(function(data) {
 		updateLocationDisplay(data)

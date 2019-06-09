@@ -2,20 +2,49 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href=".compiledcss/index.css" />
-		<meta name="supported-color-schemes" content="light dark" />
+		<link rel="stylesheet" href=".compiledcss/fonts.css" />
+		<meta name="supported-color-schemes" content="dark" />
 		<title>ED Info Web UI</title>
 	</head>
 	<body>
 		<h1 class="light">ED Info</h1>
 		<hr />
 		<p id="current-location">
-			<span id="current-system-span">You are in <span id="current-system">--</span>.</span>
+			<span id="current-system-span">You are in <span id="current-system">—</span>.</span>
 			<br />
-			<span id="current-station-span" class="current-station-span">Docked at <span id="current-station">--</span></span>
-			<span id="undocked-span" class="current-station-span">Undocked</span>
+			<span id="current-station-span" class="current-station-span">Docked at <span id="current-station">—</span></span>
+			<span id="undocked-span" class="current-station-span">JavaScript is disabled</span>
 		</p>
+		
+		<div class="controls-container">
+			<button id="extendedinfo-fetch-button" onclick="updateExtendedInfo()"><span>Find Nearby Stations</span></button>
+			<div class="segmentedcontrol">
+				<input name="filter-selector" id="filter-selector-fuel" value="fuel" type="radio" class="segmentedcontrol" checked />
+				<label for="filter-selector-fuel"><span>Fuel</span></label>
+				
+				<input name="filter-selector" id="filter-selector-repair" value="repair" type="radio" class="segmentedcontrol" />
+				<label for="filter-selector-repair"><span>Repair</span></label>
+				
+				<input name="filter-selector" id="filter-selector-restock" value="restock" type="radio" class="segmentedcontrol" />
+				<label for="filter-selector-restock"><span>Restock</span></label>
+				
+				<input name="filter-selector" id="filter-selector-if" value="interstellarFactors" type="radio" class="segmentedcontrol" />
+				<label for="filter-selector-if"><span>Interstellar Factors</span></label>
+				
+				<input name="filter-selector" id="filter-selector-mtraders" value="materialTrader" type="radio" class="segmentedcontrol" />
+				<label for="filter-selector-mtraders"><span>Material Traders</span></label>
+			</div>
+		</div>
+		
+		<table id="extendedinfo-table">
+		</table>
+		
+		<span id="rateLimitIndicator">EDSM rate limit: <span id="rateLimitIndicatorValue">–/– (–s)</span></span>
 		
 		<script src="socket.io/socket.io.js"></script>
 		<script src="location.js"></script>
+		<script src="colormatrix.js"></script>
+		<script src="extendedinfo.js"></script>
+		<script src="ratelimit.js"></script>
 	</body>
 </html>

@@ -1,19 +1,23 @@
 * {
   box-sizing: border-box;
 }
+.monospace {
+  font-family: "Menlo", "DejaVu Sans Mono", monospace;
+}
 body {
   padding: 16px;
   font-family: sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 0 16px #FF8020;
 }
-/* @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #202020;
-		color: #E0E0E0;
-	}
-	hr {
-		border-color: #808080;
-	}
-} */
+body {
+  background-color: black;
+  color: #FF8020;
+}
+hr {
+  border-color: #FF8020;
+  box-shadow: 0 0 16px 2px #FF8020;
+}
 .light {
   font-weight: lighter;
 }
@@ -27,15 +31,10 @@ body {
   opacity: 0.7;
 }
 .link-activebg:active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   padding: 4px;
   margin: -4px;
-}
-@media (prefers-color-scheme: dark) {
-  .link-activebg:active {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
 }
 h1 {
   margin-bottom: 4px;
@@ -44,6 +43,32 @@ hr {
   border-width: 0.5px;
   margin: 16px;
   padding: none;
+}
+button {
+  height: 32px;
+  outline: none;
+  border: none;
+  font-size: 11pt;
+  text-transform: uppercase;
+  background-color: #FF8020;
+  color: black;
+  box-shadow: 0 0 16px #FF8020;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+button::-moz-focus-inner {
+  border: none;
+}
+button:focus {
+  border: 2px solid #30A0FF;
+  padding: -2px;
+  box-shadow: 0 0 16px #30A0FF;
+}
+button:active {
+  background-color: #30A0FF;
+  box-shadow: 0 0 16px #30A0FF;
 }
 #current-location {
   font-size: 16pt;
@@ -56,9 +81,78 @@ hr {
   display: block;
   margin-top: 4px;
   font-size: 11pt;
-  text-transform: lowercase;
-  font-variant: small-caps;
+  font-weight: normal;
+  color: #30A0FF;
+  text-shadow: 0 0 16px #30A0FF;
 }
 #current-location .current-station-span #current-station {
   font-weight: bold;
+}
+.controls-container {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.segmentedcontrol {
+  align-self: stretch;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  font-size: 11pt;
+  border: 1px solid #FF8020;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #FF8020;
+  overflow: hidden;
+}
+.segmentedcontrol label {
+  padding: 0 8px 0 8px;
+  border-right: 1px solid #FF8020;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.segmentedcontrol label:last-child {
+  border-right: none;
+}
+.segmentedcontrol input {
+  display: none;
+}
+.segmentedcontrol input:checked + label {
+  background-color: #FF8020;
+  color: black;
+}
+#extendedinfo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#extendedinfo-table thead td {
+  padding: 0;
+}
+#extendedinfo-table thead td div {
+  box-shadow: 0 0 8px #FF8020;
+  background-color: #FF8020;
+  color: black;
+  margin: 1px;
+  padding: 4px;
+}
+#extendedinfo-table thead td:first-child div {
+  margin-left: none;
+}
+#extendedinfo-table td {
+  box-shadow: 0 0 8px #FF8020;
+  padding: 4px;
+  border: 1px solid #FF8020;
+  margin: 2px;
+}
+#rateLimitIndicator {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  visibility: hidden;
+}
+#rateLimitIndicator span {
+  text-transform: none;
 }
