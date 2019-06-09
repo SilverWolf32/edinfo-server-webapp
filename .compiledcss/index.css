@@ -4,6 +4,7 @@
 body {
   padding: 16px;
   font-family: sans-serif;
+  text-transform: uppercase;
   text-shadow: 0 0 16px #FF8020;
 }
 body {
@@ -45,8 +46,7 @@ button {
   outline: none;
   border: none;
   font-size: 11pt;
-  text-transform: lowercase;
-  font-variant: small-caps;
+  text-transform: uppercase;
   background-color: #FF8020;
   color: black;
   box-shadow: 0 0 16px #FF8020;
@@ -79,8 +79,6 @@ button:active {
   margin-top: 4px;
   font-size: 11pt;
   font-weight: normal;
-  text-transform: lowercase;
-  font-variant: small-caps;
   color: #30A0FF;
   text-shadow: 0 0 16px #30A0FF;
 }
@@ -100,10 +98,7 @@ button:active {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  font-size: 12pt;
-  font-weight: bold;
-  text-transform: lowercase;
-  font-variant: small-caps;
+  font-size: 11pt;
   border: 1px solid #FF8020;
   border-radius: 8px;
   box-shadow: 0 0 16px #FF8020;
@@ -154,4 +149,7 @@ button:active {
   right: 8px;
   top: 8px;
   visibility: hidden;
+}
+#rateLimitIndicator span {
+  text-transform: none;
 }
