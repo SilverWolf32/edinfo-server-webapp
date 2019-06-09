@@ -1,13 +1,10 @@
-let extendedInfoTable = document.getElementById("extendedinfo-table")
-let fetchButton = document.getElementById("extendedinfo-fetch-button")
-
 var nearbyStations = null
 
 async function updateExtendedInfo() {
 	// ask server to get nearby stations
 	console.log("Getting nearby station information")
 	
-	let table = extendedInfoTable
+	let table = document.getElementById("extendedinfo-table")
 	
 	// tell the user what's happening
 	{
@@ -78,7 +75,7 @@ function populateTable() {
 	
 	console.log("Stations:", stations)
 	
-	let table = extendedInfoTable
+	let table = document.getElementById("extendedinfo-table")
 	
 	// remove all columns
 	while (table.hasChildNodes()) {
