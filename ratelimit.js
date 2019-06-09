@@ -8,6 +8,8 @@ let rateLimitEstimatedPool = null
 let rateLimitEstimatedTimeToFull = null
 let rateLimitEstimateRegen = 5 // seconds to regenerate 1 request
 
+let rateLimitTimer = null
+
 function calcRateLimitEstimate() {
 	if (rateLimitLastUsed == null) {
 		return false
@@ -19,6 +21,12 @@ function calcRateLimitEstimate() {
 	
 	if (rateLimitEstimatedPool > rateLimitMax) {
 		rateLimitEstimatedPool = rateLimitMax
+		
+		// back to full, so hide indicator
+		let fullIndicator = document.getElementById("rateLimitIndicator")
+		fullIndicator.style = ""
+		// stop updating
+		clearInterval(rateLimitTimer)
 	}
 	if (rateLimitEstimatedTimeToFull < 0) {
 		rateLimitEstimatedTimeToFull = 0
@@ -44,6 +52,8 @@ socketio.on("rate-limit-info", function(info) {
 	
 	let fullIndicator = document.getElementById("rateLimitIndicator")
 	fullIndicator.style = "visibility: visible;"
+	
+	rateLimitTimer = setInterval(displayRateLimitEstimate, 200)
 })
 function displayRateLimitEstimate() {
 	console.log("Calculating rate limit estimate")
@@ -53,5 +63,3 @@ function displayRateLimitEstimate() {
 	let indicator = document.getElementById("rateLimitIndicatorValue")
 	indicator.textContent = `${rateLimitEstimatedPool}/${rateLimitMax} (${rateLimitEstimatedTimeToFull}s)`
 }
-
-setInterval(displayRateLimitEstimate, 200)
