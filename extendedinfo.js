@@ -21,7 +21,7 @@ async function updateExtendedInfo() {
 		table.appendChild(tr)
 	}
 	
-	fetch("/api/nearby-stations?r=1")
+	fetch("/api/nearby-stations?r=30")
 	.then(function(response) {
 		if (response.status != 200) {
 			// it's an error
