@@ -107,6 +107,10 @@ button:active {
   box-shadow: 0 0 16px #FF8020;
   overflow: hidden;
 }
+.segmentedcontrol:focus-within {
+  border: 1px solid #30A0FF;
+  box-shadow: 0 0 16px #30A0FF;
+}
 .segmentedcontrol label {
   padding: 0 8px 0 8px;
   border-right: 1px solid #FF8020;
@@ -118,7 +122,8 @@ button:active {
   border-right: none;
 }
 .segmentedcontrol input {
-  display: none;
+  position: absolute;
+  opacity: 0;
 }
 .segmentedcontrol input:checked + label {
   background-color: #FF8020;
