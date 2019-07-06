@@ -161,3 +161,8 @@ button:active {
 #rateLimitIndicator span {
   text-transform: none;
 }
+#hudFilterContainer {
+  position: absolute;
+  width: 0;
+  height: 0;
+}

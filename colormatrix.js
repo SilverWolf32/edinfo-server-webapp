@@ -14,11 +14,11 @@ async function useHUDColor() {
 	})
 	.then(function(svg) {
 		console.log("SVG:", svg)
-		// let container = document.getElementById("svgContainer")
-		// container.innerHTML = svg
+		let container = document.getElementById("hudFilterContainer")
+		container.innerHTML = svg
 		
 		// see https://stackoverflow.com/a/41022696
-		document.body.insertAdjacentHTML("beforeend", svg)
+		// document.body.insertAdjacentHTML("beforeend", svg)
 		
 		// see https://stackoverflow.com/a/24109000
 		// let parser = new DOMParser()
