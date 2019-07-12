@@ -153,13 +153,27 @@ button:active {
   margin: 2px;
 }
 #rateLimitIndicator {
-  position: absolute;
-  right: 8px;
-  top: 8px;
   visibility: hidden;
 }
 #rateLimitIndicator span {
   text-transform: none;
+}
+#cmdr-details {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+#cmdr-details #cmdr-name {
+  display: none;
+  font-size: 12pt;
+}
+#cmdr-details #ship-name {
+  display: none;
+  font-size: 10pt;
+  color: #30A0FF;
 }
 #hudFilterContainer {
   position: absolute;

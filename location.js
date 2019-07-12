@@ -23,7 +23,7 @@ socketio.on("update-location", function(payload) {
 
 async function fetchLocationInfo() {
 	// Fetch API, see https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-	fetch("/api").then(function(response) {
+	fetch("/api/location").then(function(response) {
 		return response.json()
 	}).then(function(data) {
 		updateLocationDisplay(data)

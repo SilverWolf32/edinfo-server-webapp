@@ -240,16 +240,34 @@ button {
 }
 
 #rateLimitIndicator {
-	position: absolute;
-	// float: right;
-	right: 8px;
-	// bottom: 8px;
-	top: 8px;
+	// position: absolute;
+	// right: 8px;
+	// top: 8px;
 	
 	visibility: hidden;
 	
 	span {
 		text-transform: none; // allow lowercase "s" for seconds
+	}
+}
+
+#cmdr-details {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	
+	#cmdr-name {
+		display: none;
+		font-size: 12pt;
+	}
+	#ship-name {
+		display: none;
+		font-size: 10pt;
+		color: @secondarycolor;
 	}
 }
 
