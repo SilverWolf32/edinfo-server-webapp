@@ -85,6 +85,11 @@ function populateTable() {
 	// add rows
 	let properties = ["type", "name", "systemName", "distanceToArrival", "distance"]
 	
+	let selectedType = document.querySelector('input[name="filter-selector"]:checked').value
+	if (selectedType === "materialTrader") {
+		properties = ["type", "mttype", "name", "systemName", "distanceToArrival", "distance"]
+	}
+	
 	let thead = document.createElement("thead")
 	// add headers
 	for (let i = 0; i < properties.length; i++) {
@@ -93,6 +98,9 @@ function populateTable() {
 		
 		if (property == "type") {
 			displayName = "Pad"
+		}
+		if (property == "mttype" || property == "techtype") {
+			displayName = "Type"
 		}
 		
 		let cell = document.createElement("td")
@@ -122,6 +130,31 @@ function populateTable() {
 				if (station[property] === "Outpost" || station[property] === "Planetary Outpost") {
 					text = "M"
 				}
+				cell.classList.add("monospace")
+			}
+			if (property == "mttype") {
+				let mttype = "??"
+				// see https://elite-dangerous.fandom.com/wiki/Material_Trader
+				switch (station["economy"]) {
+					case "Refinery":
+						mttype = "Raw"
+						break
+					case "Extraction":
+						mttype = "Raw/Manufactured"
+						break
+					case "Industrial":
+						mttype = "Manufactured"
+						break
+					case "High Tech":
+					case "Military":
+						mttype = "Encoded"
+						break
+				}
+				if (station["secondEconomy"] != null) {
+					console.log("Second economy for " + station["name"] + ": " + station["secondEconomy"])
+					mttype += "?"
+				}
+				text = mttype
 				cell.classList.add("monospace")
 			}
 			cell.textContent = text
