@@ -119,7 +119,7 @@ function populateTable() {
 			if (property == "type") {
 				// outposts are currently the only stations with only S/M pads
 				text = "L"
-				if (station[property] === "Planetary Outpost") {
+				if (station[property] === "Outpost" || station[property] === "Planetary Outpost") {
 					text = "M"
 				}
 				cell.classList.add("monospace")
