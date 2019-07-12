@@ -15,7 +15,7 @@ socketio.on("connect", function() {
 socketio.on("disconnect", function() {
 	console.log("Disconnected.")
 })
-socketio.on("new-data", function(payload) {
+socketio.on("update-location", function(payload) {
 	let data = JSON.parse(payload)
 	
 	updateLocationDisplay(data)
