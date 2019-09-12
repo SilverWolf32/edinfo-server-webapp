@@ -26,8 +26,11 @@ async function useHUDColor() {
 		// document.querySelector("body").appendChild(element)
 	})
 	.then(function() {
-		let toChange = document.body
-		toChange.style = "filter: url(\"#HUD\");"
+		// adding the filter to document.body works just fine, but messes up `position: fixed;` elements in Firefox
+		let toChange = document.body.children
+		for (element of toChange) {
+			element.style = "filter: url(\"#HUD\");"
+		}
 	})
 	.catch(function(error) {
 		console.log(error)
@@ -35,4 +38,3 @@ async function useHUDColor() {
 }
 
 useHUDColor()
-

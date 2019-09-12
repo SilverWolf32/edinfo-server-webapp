@@ -7,7 +7,7 @@
 body {
   height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 16px;
   font-family: sans-serif;
   text-transform: uppercase;
   text-shadow: 0 0 16px #FF8020;
@@ -15,13 +15,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
-body > #main {
-  flex-grow: 1;
-  overflow: auto;
-  margin: 0;
-  padding: 16px;
-  -webkit-overflow-scrolling: touch;
 }
 body {
   background-color: black;
@@ -190,7 +183,6 @@ button:active {
   color: #30A0FF;
 }
 #sockets-warning {
-  flex-shrink: 0;
   position: fixed;
   left: 0;
   bottom: 0;

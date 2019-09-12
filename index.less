@@ -24,7 +24,7 @@ body {
 	
 	height: 100vh;
 	margin: 0;
-	padding: 0;
+	padding: 16px;
 	
 	font-family: sans-serif;
 	// text-transform: lowercase;
@@ -39,17 +39,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	
-	& > #main {
-		flex-grow: 1;
-		overflow: auto;
-		
-		margin: 0;
-		padding: 16px;
-		
-		// we do want scroll bounce on this
-		-webkit-overflow-scrolling: touch;
-	}
 }
 // @media (prefers-color-scheme: dark) {
 body {
@@ -296,7 +285,6 @@ button {
 }
 
 #sockets-warning {
-	flex-shrink: 0;
 	position: fixed;
 	left: 0;
 	bottom: 0;
