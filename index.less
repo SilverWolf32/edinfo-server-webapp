@@ -1,5 +1,7 @@
 @maincolor: #FF8020;
 @secondarycolor: #30A0FF;
+@warning: @maincolor;
+@warningstripewidth: 12px;
 
 @textglow: 0 0 16px;
 // @boxglow: 0 0 16px 1px;
@@ -289,13 +291,39 @@ button {
 
 #sockets-warning {
 	flex-shrink: 0;
-	/* position: fixed;
+	position: fixed;
 	left: 0;
-	bottom: 0; */
+	bottom: 0;
 	width: 100%;
 	height: 32px;
 	
-	background-color: #606060;
+	background-color: black;
+	// background-color: #00000080;
+	// backdrop-filter: blur(4px);
+	// -webkit-backdrop-filter: blur(4px);
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: stretch;
+	
+	.stripes {
+		flex-grow: 1;
+		// background-color: #606060;
+		background-image: repeating-linear-gradient(135deg, @warning, @warning @warningstripewidth, transparent @warningstripewidth, transparent calc(@warningstripewidth * 2));
+		// filter: drop-shadow(0 4px 16px 2px @maincolor);
+		// filter: grayscale(100%);
+	}
+	span {
+		flex-grow: 0;
+		padding-left: 16px;
+		padding-right: 16px;
+		
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 #hudFilterContainer {
