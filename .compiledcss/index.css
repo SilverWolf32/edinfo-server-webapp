@@ -11,7 +11,7 @@ body {
   font-family: sans-serif;
   text-transform: uppercase;
   text-shadow: 0 0 16px #FF8020;
-  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -21,6 +21,7 @@ body > #main {
   overflow: auto;
   margin: 0;
   padding: 16px;
+  -webkit-overflow-scrolling: touch;
 }
 body {
   background-color: black;

@@ -33,6 +33,9 @@ body {
 	
 	text-shadow: @textglow @maincolor;
 	
+	// fix scroll bounce on iOS
+	-webkit-overflow-scrolling: auto;
+	
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
@@ -43,6 +46,9 @@ body {
 		
 		margin: 0;
 		padding: 16px;
+		
+		// we do want scroll bounce on this
+		-webkit-overflow-scrolling: touch;
 	}
 }
 // @media (prefers-color-scheme: dark) {
