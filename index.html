@@ -7,44 +7,50 @@
 		<title>ED Info Web UI</title>
 	</head>
 	<body>
-		<h1 class="light">ED Info</h1>
-		<hr />
-		<p id="current-location">
-			<span id="current-system-span">You are in <span id="current-system">—</span>.</span>
-			<br />
-			<span id="current-station-span" class="current-station-span">Docked at <span id="current-station">—</span></span>
-			<span id="undocked-span" class="current-station-span">JavaScript is disabled</span>
-		</p>
-		
-		<div id="cmdr-details">
-			<span id="cmdr-name">CMDR ??????</span>
-			<span id="ship-name">--</span>
+		<div id="main">
+			<h1 class="light">ED Info</h1>
+			<hr />
+			<p id="current-location">
+				<span id="current-system-span">You are in <span id="current-system">—</span>.</span>
+				<br />
+				<span id="current-station-span" class="current-station-span">Docked at <span id="current-station">—</span></span>
+				<span id="undocked-span" class="current-station-span">JavaScript is disabled</span>
+			</p>
 			
-			<span id="rateLimitIndicator">EDSM rate limit: <span id="rateLimitIndicatorValue">–/– (–s)</span></span>
-		</div>
-		
-		<div class="controls-container">
-			<button id="extendedinfo-fetch-button" onclick="updateExtendedInfo()"><span>Find Nearby Stations</span></button>
-			<div class="segmentedcontrol">
-				<input name="filter-selector" id="filter-selector-fuel" value="fuel" type="radio" class="segmentedcontrol" checked />
-				<label for="filter-selector-fuel"><span>Fuel</span></label>
+			<!-- <div id="cmdr-details">
+				<span id="cmdr-name">CMDR ??????</span>
+				<span id="ship-name">—</span>
 				
-				<input name="filter-selector" id="filter-selector-repair" value="repair" type="radio" class="segmentedcontrol" />
-				<label for="filter-selector-repair"><span>Repair</span></label>
-				
-				<input name="filter-selector" id="filter-selector-restock" value="restock" type="radio" class="segmentedcontrol" />
-				<label for="filter-selector-restock"><span>Restock</span></label>
-				
-				<input name="filter-selector" id="filter-selector-if" value="interstellarFactors" type="radio" class="segmentedcontrol" />
-				<label for="filter-selector-if"><span>Interstellar Factors</span></label>
-				
-				<input name="filter-selector" id="filter-selector-mtraders" value="materialTrader" type="radio" class="segmentedcontrol" />
-				<label for="filter-selector-mtraders"><span>Material Traders</span></label>
+				<span id="rateLimitIndicator">EDSM rate limit: <span id="rateLimitIndicatorValue">–/– (–s)</span></span>
+			</div> -->
+			
+			<div class="controls-container">
+				<button id="extendedinfo-fetch-button" onclick="updateExtendedInfo()"><span>Find Nearby Stations</span></button>
+				<div class="segmentedcontrol">
+					<input name="filter-selector" id="filter-selector-fuel" value="fuel" type="radio" class="segmentedcontrol" checked />
+					<label for="filter-selector-fuel"><span>Fuel</span></label>
+					
+					<input name="filter-selector" id="filter-selector-repair" value="repair" type="radio" class="segmentedcontrol" />
+					<label for="filter-selector-repair"><span>Repair</span></label>
+					
+					<input name="filter-selector" id="filter-selector-restock" value="restock" type="radio" class="segmentedcontrol" />
+					<label for="filter-selector-restock"><span>Restock</span></label>
+					
+					<input name="filter-selector" id="filter-selector-if" value="interstellarFactors" type="radio" class="segmentedcontrol" />
+					<label for="filter-selector-if"><span>Interstellar Factors</span></label>
+					
+					<input name="filter-selector" id="filter-selector-mtraders" value="materialTrader" type="radio" class="segmentedcontrol" />
+					<label for="filter-selector-mtraders"><span>Material Traders</span></label>
+				</div>
 			</div>
+			
+			<table id="extendedinfo-table">
+			</table>
 		</div>
 		
-		<table id="extendedinfo-table">
-		</table>
+		<div id="sockets-warning">
+			<span>WebSockets offline – live update unavailable</span>
+		</div>
 		
 		<span id="hudFilterContainer" />
 		

@@ -19,7 +19,10 @@
 
 body {
 	// background-color: #F0F0F0;
-	padding: 16px;
+	
+	height: 100vh;
+	margin: 0;
+	padding: 0;
 	
 	font-family: sans-serif;
 	// text-transform: lowercase;
@@ -27,6 +30,18 @@ body {
 	text-transform: uppercase;
 	
 	text-shadow: @textglow @maincolor;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	
+	& > #main {
+		flex-grow: 1;
+		overflow: auto;
+		
+		margin: 0;
+		padding: 16px;
+	}
 }
 // @media (prefers-color-scheme: dark) {
 body {
@@ -66,6 +81,7 @@ hr {
 }
 
 h1 {
+	margin-top: 4px;
 	margin-bottom: 4px;
 }
 
@@ -269,6 +285,17 @@ button {
 		font-size: 10pt;
 		color: @secondarycolor;
 	}
+}
+
+#sockets-warning {
+	flex-shrink: 0;
+	/* position: fixed;
+	left: 0;
+	bottom: 0; */
+	width: 100%;
+	height: 32px;
+	
+	background-color: #606060;
 }
 
 #hudFilterContainer {
