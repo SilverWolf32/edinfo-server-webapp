@@ -51,7 +51,7 @@ socketio.on("rate-limit-info", function(info) {
 	indicator.textContent = `${rateLimitPool}/${rateLimitMax} (${rateLimitTimeToFull}s)`
 	
 	let fullIndicator = document.getElementById("rateLimitIndicator")
-	fullIndicator.style = "visibility: visible;"
+	fullIndicator.style = "display: block;"
 	
 	rateLimitTimer = setInterval(displayRateLimitEstimate, 200)
 })
