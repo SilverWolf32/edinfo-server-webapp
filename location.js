@@ -7,7 +7,7 @@ locationDisplayP.style.visibility = "hidden"
 	undockedSpan.textContent = "Undocked" // undo the no-JS warning in the HTML
 }
 
-var socketio = io("http://localhost:3000")
+var socketio = io("/")
 socketio.on("connect", function() {
 	console.log("Socket connected.")
 	let socketsWarning = document.getElementById("sockets-warning")
