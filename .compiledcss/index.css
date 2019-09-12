@@ -153,7 +153,7 @@ button:active {
   margin: 2px;
 }
 #rateLimitIndicator {
-  visibility: hidden;
+  display: none;
 }
 #rateLimitIndicator span {
   text-transform: none;
@@ -164,7 +164,7 @@ button:active {
   top: 8px;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
 }
 #cmdr-details #cmdr-name {
   display: none;

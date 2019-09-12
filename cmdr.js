@@ -25,7 +25,7 @@ function updateCMDRDetails(data) {
 	
 	let nameDisplay = document.getElementById("cmdr-name")
 	
-	let name = data.cmdrName
+	let name = data.cmdr.cmdrName
 	if (name == null) {
 		name = "Unknown"
 	}
