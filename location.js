@@ -7,13 +7,18 @@ locationDisplayP.style.visibility = "hidden"
 	undockedSpan.textContent = "Undocked" // undo the no-JS warning in the HTML
 }
 
-
 var socketio = io("http://localhost:3000")
 socketio.on("connect", function() {
 	console.log("Socket connected.")
+	let socketsWarning = document.getElementById("sockets-warning")
+	socketsWarning.style.visibility = "hidden";
+	socketsWarning.style.opacity = "0";
 })
 socketio.on("disconnect", function() {
 	console.log("Disconnected.")
+	let socketWarning = document.getElementById("sockets-warning")
+	socketWarning.style.visibility = ""
+	socketWarning.style.opacity = ""
 })
 socketio.on("update-location", function(payload) {
 	let data = JSON.parse(payload)

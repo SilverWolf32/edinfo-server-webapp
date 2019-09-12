@@ -192,6 +192,7 @@ button:active {
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 #sockets-warning .stripes {
   flex-grow: 1;
