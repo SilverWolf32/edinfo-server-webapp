@@ -18,7 +18,7 @@ async function updateExtendedInfo() {
 		table.appendChild(tr)
 	}
 	
-	fetch("/api/nearby-stations?r=30")
+	fetch("/api/nearby-stations?r=30&clientID=" + socketio.id)
 	.then(function(response) {
 		if (response.status != 200) {
 			// it's an error
