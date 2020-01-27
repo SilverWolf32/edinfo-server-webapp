@@ -27,9 +27,6 @@ async function useHUDColor() {
 		
 		return svg
 	})
-	.then(function(svg) {
-		colorScrollbar()
-	})
 	.then(function() {
 		// adding the filter to document.body works just fine, but messes up `position: fixed;` elements in Firefox
 		let toChange = document.body.children
