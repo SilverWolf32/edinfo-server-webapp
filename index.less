@@ -29,6 +29,13 @@ body {
 	text-transform: uppercase;
 	
 	text-shadow: @textglow @maincolor;
+	
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
 }
 // @media (prefers-color-scheme: dark) {
 body {
@@ -205,8 +212,18 @@ button {
 	}
 }
 
-#extendedinfo-table {
+#extendedinfo-table-container {
 	width: 100%;
+	flex: 0 1 100%;
+	overflow: auto;
+
+	border: 1px solid @maincolor;
+	padding: 1px;
+}
+#extendedinfo-table {
+	margin: 0;
+	width: 100%;
+	
 	border-collapse: collapse;
 	// border-style: hidden;
 	// border-spacing: 4px 0; // space cells apart
