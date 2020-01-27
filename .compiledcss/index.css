@@ -17,6 +17,12 @@ body {
   align-items: stretch;
   scrollbar-color: #FF8020 black;
 }
+::-webkit-scrollbar {
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #FF8020;
+}
 body {
   background-color: black;
   color: #FF8020;
