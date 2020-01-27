@@ -37,11 +37,11 @@ body {
 	justify-content: flex-start;
 	align-items: stretch;
 	
-	scrollbar-color: @maincolor black;
+	scrollbar-color: @maincolor transparent;
 }
 
 ::-webkit-scrollbar {
-	background-color: black;
+	background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
 	background-color: @maincolor;
@@ -229,6 +229,9 @@ button {
 	overflow: auto;
 	
 	border: 1px solid @maincolor;
+	// box-shadow: @boxglow @maincolor;
+	// box-shadow: @boxglow @maincolor, @boxglow @maincolor inset;
+	box-shadow: @boxglowsmall @maincolor, @boxglowsmall @maincolor inset;
 	padding: 1px;
 }
 #extendedinfo-table {

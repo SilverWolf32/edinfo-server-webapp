@@ -15,10 +15,10 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  scrollbar-color: #FF8020 black;
+  scrollbar-color: #FF8020 transparent;
 }
 ::-webkit-scrollbar {
-  background-color: black;
+  background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #FF8020;
@@ -149,6 +149,7 @@ button:active {
   flex: 0 1 100%;
   overflow: auto;
   border: 1px solid #FF8020;
+  box-shadow: 0 0 8px #FF8020, 0 0 8px #FF8020 inset;
   padding: 1px;
 }
 #extendedinfo-table {
