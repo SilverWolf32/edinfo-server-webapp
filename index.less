@@ -29,7 +29,17 @@ body {
 	text-transform: uppercase;
 	
 	text-shadow: @textglow @maincolor;
+	
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	
+	scrollbar-color: @maincolor black;
 }
+
 // @media (prefers-color-scheme: dark) {
 body {
 	background-color: black;
@@ -146,6 +156,7 @@ button {
 }
 
 .controls-container {
+	flex: 0 0 auto;
 	margin-bottom: 16px;
 	
 	// border: 1px solid @maincolor;
@@ -205,8 +216,18 @@ button {
 	}
 }
 
-#extendedinfo-table {
+#extendedinfo-table-container {
 	width: 100%;
+	flex: 0 1 100%;
+	overflow: auto;
+	
+	border: 1px solid @maincolor;
+	padding: 1px;
+}
+#extendedinfo-table {
+	margin: 0;
+	width: 100%;
+	
 	border-collapse: collapse;
 	// border-style: hidden;
 	// border-spacing: 4px 0; // space cells apart

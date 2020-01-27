@@ -24,6 +24,8 @@ async function useHUDColor() {
 		// let parser = new DOMParser()
 		// let element = parser.parseFromString(svg, "image/svg+xml")
 		// document.querySelector("body").appendChild(element)
+		
+		return svg
 	})
 	.then(function() {
 		// adding the filter to document.body works just fine, but messes up `position: fixed;` elements in Firefox

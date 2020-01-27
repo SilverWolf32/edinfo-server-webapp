@@ -9,6 +9,13 @@ body {
   font-family: sans-serif;
   text-transform: uppercase;
   text-shadow: 0 0 16px #FF8020;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  scrollbar-color: #FF8020 black;
 }
 body {
   background-color: black;
@@ -89,6 +96,7 @@ button:active {
   font-weight: bold;
 }
 .controls-container {
+  flex: 0 0 auto;
   margin-bottom: 16px;
   display: flex;
   flex-direction: row;
@@ -129,7 +137,15 @@ button:active {
   background-color: #FF8020;
   color: black;
 }
+#extendedinfo-table-container {
+  width: 100%;
+  flex: 0 1 100%;
+  overflow: auto;
+  border: 1px solid #FF8020;
+  padding: 1px;
+}
 #extendedinfo-table {
+  margin: 0;
   width: 100%;
   border-collapse: collapse;
 }
