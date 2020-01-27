@@ -136,6 +136,7 @@ button:active {
   border-right: none;
 }
 .segmentedcontrol input {
+  visibility: hidden;
   position: absolute;
   opacity: 0;
 }
