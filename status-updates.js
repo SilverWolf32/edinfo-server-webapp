@@ -5,6 +5,13 @@ socketio.on("status-update", function(payload) {
 	console.log("Received status update:", message)
 	
 	let table = document.getElementById("extendedinfo-table")
+	
+	if (table.querySelector("thead") != null) {
+		// if it has a header, it's not in the middle of fetching
+		console.log("Discarding - not during fetch")
+		return
+	}
+	
 	{
 		while (table.hasChildNodes()) {
 			table.removeChild(table.firstChild)
