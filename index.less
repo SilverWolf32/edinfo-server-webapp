@@ -216,9 +216,10 @@ button {
 	}
 	input {
 		// display: none;
-		visibility: hidden;
+		// visibility: hidden;
 		position: absolute;
 		opacity: 0;
+		z-index: -1;
 		&:checked + label {
 			background-color: @maincolor;
 			color: black;

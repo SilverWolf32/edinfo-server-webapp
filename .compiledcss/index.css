@@ -137,9 +137,9 @@ button:active {
   border-right: none;
 }
 .segmentedcontrol input {
-  visibility: hidden;
   position: absolute;
   opacity: 0;
+  z-index: -1;
 }
 .segmentedcontrol input:checked + label {
   background-color: #FF8020;
