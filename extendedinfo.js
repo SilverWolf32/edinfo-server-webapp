@@ -18,7 +18,15 @@ async function updateExtendedInfo() {
 		table.appendChild(tr)
 	}
 	
-	fetch("/api/nearby-stations?r=30&clientID=" + socketio.id)
+	let radiusBox = document.getElementById("radius-input")
+	console.log("Radius input box:", radiusBox)
+	let radius = radiusBox.valueAsNumber
+	console.log("Provided radius:", radius)
+	if (radius == null) {
+		radius = 30
+	}
+	
+	fetch("/api/nearby-stations?r=" + radius + "&clientID=" + socketio.id)
 	.then(function(response) {
 		if (response.status != 200) {
 			// it's an error

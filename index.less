@@ -167,6 +167,23 @@ button {
 	justify-content: flex-start;
 	align-items: center;
 }
+.textfield {
+	align-self: stretch;
+	margin-left: 16px;
+	
+	background-color: transparent;
+	color: @maincolor;
+	border: 1px solid @maincolor;
+	border-radius: 4px;
+	box-shadow: @boxglow @maincolor;
+	text-shadow: @textglow @maincolor;
+	&:focus {
+		border: 1px solid @secondarycolor;
+		box-shadow: @boxglow @secondarycolor;
+	}
+	
+	font-size: 11pt;
+}
 .segmentedcontrol {
 	align-self: stretch;
 	margin-left: 16px;
