@@ -30,17 +30,7 @@ body {
 	
 	text-shadow: @textglow @maincolor;
 	
-	height: 100%;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: stretch;
-	
 	scrollbar-color: @maincolor transparent;
-	
-	// disable scroll bounce on Safari
-	overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -228,21 +218,8 @@ button {
 	}
 }
 
-#extendedinfo-table-container {
-	width: 100%;
-	flex: 0 1 100%;
-	overflow: auto;
-	
-	border: 1px solid @maincolor;
-	// box-shadow: @boxglow @maincolor;
-	// box-shadow: @boxglow @maincolor, @boxglow @maincolor inset;
-	box-shadow: @boxglowsmall @maincolor, @boxglowsmall @maincolor inset;
-	padding: 1px;
-}
 #extendedinfo-table {
-	margin: 0;
 	width: 100%;
-	
 	border-collapse: collapse;
 	// border-style: hidden;
 	// border-spacing: 4px 0; // space cells apart
